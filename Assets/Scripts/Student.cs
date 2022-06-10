@@ -70,4 +70,20 @@ public class Student : Human
             SetGroup(studentInputFields[2].text);
         }
         
+        public void Edit(InputField[] baseInputFields, InputField[] birthday, InputField[] studentInputFields)
+        {
+            base.Edit(baseInputFields, birthday);
+            studentInputFields[0].text = Faculty;
+            studentInputFields[1].text = Convert.ToString(Year);
+            studentInputFields[2].text = Group;
+        }
+        
+        public void Print(Text[] baseInputFields, Text[] birthday, Text[] studentInputFields)
+        {
+            base.Print(baseInputFields, birthday);
+            studentInputFields[0].text = Faculty;
+            studentInputFields[1].text = Convert.ToString(Year);
+            studentInputFields[2].text = Group;
+        }
+        
     }

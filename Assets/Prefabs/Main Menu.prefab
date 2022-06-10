@@ -123,13 +123,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2637271016058155789}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1485781197463730851}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: CreateWindow
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 6073051274483310719, guid: 04d793d403232254587b78a164bfcbf2, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d128b9e8135ac854aacf271e314ded8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _indexOfList: -1
 --- !u!1 &2637271016389796388
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d128b9e8135ac854aacf271e314ded8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _indexOfList: -1
 --- !u!1 &2637271016634931143
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d128b9e8135ac854aacf271e314ded8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _indexOfList: -1
 --- !u!1 &2637271017205091507
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,7 +945,7 @@ MonoBehaviour:
         m_MethodName: CreateWindow
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 103793376980802747, guid: 5ceb38e09f014af4a85ea5566da753b0, type: 3}
+          m_ObjectArgument: {fileID: 5665003091458376172, guid: 55fef7e1dc451a346ad803e4b470e052, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -980,6 +983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d128b9e8135ac854aacf271e314ded8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _indexOfList: -1
 --- !u!1 &6252056429744794774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,3 +1455,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d128b9e8135ac854aacf271e314ded8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _indexOfList: -1

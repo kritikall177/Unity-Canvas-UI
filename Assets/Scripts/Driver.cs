@@ -58,4 +58,18 @@ public sealed class Driver : Employee
             SetCarBrand(driverInputFields[0].text);
             SetCarModel(driverInputFields[1].text);
         }
+        
+        public void Edit(InputField[] baseInputFields, InputField[] birthday, InputField[] employeeInputFields, InputField[] driverInputFields)
+        {
+            base.Edit(baseInputFields, birthday, employeeInputFields);
+            driverInputFields[0].text = CarBrand;
+            driverInputFields[1].text = CarModel;
+        }
+        
+        public void Print(Text[] baseInputFields, Text[] birthday, Text[] employeeInputFields, Text[] driverInputFields)
+        {
+            base.Print(baseInputFields, birthday, employeeInputFields);
+            driverInputFields[0].text = CarBrand;
+            driverInputFields[1].text = CarModel;
+        }
     }

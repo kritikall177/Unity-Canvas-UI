@@ -83,5 +83,25 @@ public abstract class Human : MonoBehaviour
             SetPatronymic(baseInputFields[2].text);
             SetDate(birthday[0].text, birthday[1].text, birthday[2].text);
         }
+
+        public void Edit(InputField[] baseInputFields, InputField[] birthday)
+        {
+            baseInputFields[0].text = Name;
+            baseInputFields[1].text = Surname;
+            baseInputFields[2].text = Patronymic;
+            birthday[0].text = Convert.ToString(Birthday.Year);
+            birthday[1].text = Convert.ToString(Birthday.Month);
+            birthday[2].text = Convert.ToString(Birthday.Day);
+        }
+
+        public void Print(Text[] baseInputFields, Text[] birthday)
+        {
+            baseInputFields[0].text = Name;
+            baseInputFields[1].text = Surname;
+            baseInputFields[2].text = Patronymic;
+            birthday[0].text = Convert.ToString(Birthday.Year);
+            birthday[1].text = Convert.ToString(Birthday.Month);
+            birthday[2].text = Convert.ToString(Birthday.Day);
+        }
         
     }

@@ -74,4 +74,20 @@ public class Employee : Human
             SetSalary(employeeInputFields[1].text);
             SetExperience(employeeInputFields[2].text);
         }
+        
+        public void Edit(InputField[] baseInputFields, InputField[] birthday, InputField[] employeeInputFields)
+        {
+            base.Edit(baseInputFields, birthday);
+            employeeInputFields[0].text = Organization;
+            employeeInputFields[1].text = Convert.ToString(Salary);
+            employeeInputFields[2].text = Convert.ToString(Experience);
+        }
+        
+        public void Print(Text[] baseInputFields, Text[] birthday, Text[] employeeInputFields)
+        {
+            base.Print(baseInputFields, birthday);
+            employeeInputFields[0].text = Organization;
+            employeeInputFields[1].text = Convert.ToString(Salary);
+            employeeInputFields[2].text = Convert.ToString(Experience);
+        }
     }

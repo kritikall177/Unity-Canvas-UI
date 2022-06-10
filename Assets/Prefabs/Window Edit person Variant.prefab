@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 949279607829025262, guid: 7739eb0bda05e5743a81305356bf20db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 949279607829025262, guid: 7739eb0bda05e5743a81305356bf20db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RewritePerson
+      objectReference: {fileID: 0}
     - target: {fileID: 949279608113717048, guid: 7739eb0bda05e5743a81305356bf20db, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

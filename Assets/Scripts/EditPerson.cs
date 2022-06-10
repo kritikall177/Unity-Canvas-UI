@@ -1,41 +1,40 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AddPerson : MonoBehaviour
+public class EditPerson : MonoBehaviour
 {
-    public void AddingPerson()
+    public int index;
+    public void Edit(Human person)
     {
         var inputObjects = new GameObject[4]; 
         for (var i = 0; i < 4; i++)
         {
-            inputObjects[i] = transform.parent.gameObject.transform.GetChild(i).gameObject;
+            inputObjects[i] = transform.GetChild(i).gameObject;
         }
-
+        
         var baseInputFields = new InputField[inputObjects[0].transform.childCount - 1];
         for (var i = 0; i < inputObjects[0].transform.childCount - 1; i++)
         {
             baseInputFields[i] = inputObjects[0].transform.GetChild(i).GetComponent<InputField>();
         }
-
+        
         var birthday = new InputField[3];
         for (var i = 0; i < 3; i++)
         {
             birthday[i] = inputObjects[0].transform.GetChild(3).transform.GetChild(i).GetComponent<InputField>();
         }
-
+        
         if (inputObjects[1].activeSelf)
         {
-            var student = gameObject.AddComponent<Student>();
+            var student = (Student)person;
             var studentInputFields = new InputField[inputObjects[1].transform.childCount];
             for (var i = 0; i < inputObjects[1].transform.childCount; i++)
             {
                 studentInputFields[i] = inputObjects[1].transform.GetChild(i).GetComponent<InputField>();
             }
-            student.InputAdd(baseInputFields, birthday, studentInputFields);
-            ManagerUI.List.Add(student);
+            student.Edit(baseInputFields, birthday, studentInputFields);
         }
         else if (inputObjects[2].activeSelf)
         {
@@ -52,23 +51,14 @@ public class AddPerson : MonoBehaviour
                 {
                     driverInputFields[i] = inputObjects[3].transform.GetChild(i).GetComponent<InputField>();
                 }
-                var driver = gameObject.AddComponent<Driver>();
-                driver.InputAdd(baseInputFields, birthday, employeeInputFields, driverInputFields);
-                ManagerUI.List.Add(driver);
+                var driver = (Driver)person;
+                driver.Edit(baseInputFields, birthday, employeeInputFields, driverInputFields);
             }
             else
             {
-                var employee = gameObject.AddComponent<Employee>();
-                employee.InputAdd(baseInputFields, birthday, employeeInputFields);
-                ManagerUI.List.Add(employee);
+                var employee = (Employee)person;
+                employee.Edit(baseInputFields, birthday, employeeInputFields);
             }
         }
-    }
-
-    public void RewritePerson()
-    {
-        var index = transform.parent.GetComponent<EditPerson>().index;
-        AddingPerson();
-        ManagerUI.List.RemoveAt(index);
     }
 }
