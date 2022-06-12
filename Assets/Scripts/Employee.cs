@@ -8,7 +8,7 @@ public class Employee : Human
     {
         public string Organization { get; protected set; }
         public int Salary { get; protected set; }
-        public byte Experience { get; protected set; }
+        public int Experience { get; protected set; }
 
         public Employee()
         {
@@ -64,12 +64,13 @@ public class Employee : Human
         
         public void SetExperience(string experience)
         {
-            Experience = Convert.ToByte(experience);
+            Experience = Convert.ToInt32(experience);
         }
         
         public void InputAdd(InputField[] baseInputFields, InputField[] birthday, InputField[] employeeInputFields)
         {
             base.InputAdd(baseInputFields, birthday);
+            InputFieldChecker(employeeInputFields);
             SetOrganization(employeeInputFields[0].text);
             SetSalary(employeeInputFields[1].text);
             SetExperience(employeeInputFields[2].text);

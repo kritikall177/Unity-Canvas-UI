@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ButtonController : MonoBehaviour
 {
-    public int _indexOfList = -1;
+    public int indexOfList = -1;
     public void CreateWindow(GameObject window)
     {
         ManagerUI.SetWindow(window);
@@ -29,19 +29,19 @@ public class ButtonController : MonoBehaviour
 
     public void ChoosePersonForEdit(GameObject window)
     {
-        if (_indexOfList == -1) return;
-        CreateWindowForEdit(window, _indexOfList);
+        if (indexOfList == -1) return;
+        CreateWindowForEdit(window, indexOfList);
     }
     
     public void ChoosePersonForPrint(GameObject window)
     {
-        if (_indexOfList == -1) return;
-        CreateWindowForPrint(window, _indexOfList);
+        if (indexOfList == -1) return;
+        CreateWindowForPrint(window, indexOfList);
     }
 
     public void DeletePerson()
     {
-        ManagerUI.List.RemoveAt(_indexOfList);
+        ManagerUI.List.RemoveAt(indexOfList);
         Destroy(gameObject);
     }
 }

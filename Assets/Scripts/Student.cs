@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Student : Human
     {
         public string Faculty { get; protected set; }
-        public byte Year { get; protected set; }
+        public int Year { get; protected set; }
         public string Group { get; protected set; }
 
         public Student()
@@ -54,7 +54,7 @@ public class Student : Human
         
         public void SetYear(string year)
         {
-            Year = Convert.ToByte(year);
+            Year = Convert.ToInt32(year);
         }
 
         public void SetGroup(string group)
@@ -65,6 +65,7 @@ public class Student : Human
         public void InputAdd(InputField[] baseInputFields, InputField[] birthday, InputField[] studentInputFields)
         {
             base.InputAdd(baseInputFields, birthday);
+            InputFieldChecker(studentInputFields);
             SetFaculty(studentInputFields[0].text);
             SetYear(studentInputFields[1].text);
             SetGroup(studentInputFields[2].text);

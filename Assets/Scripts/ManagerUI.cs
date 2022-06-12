@@ -8,8 +8,8 @@ public class ManagerUI : MonoBehaviour
 {
     public GameObject MainWindow;
     private static GameObject WindowNow { get; set; }
-    public static Transform canvas;
-    public static List<Human> List = new List<Human>();
+    private static Transform canvas;
+    public static readonly List<Human> List = new List<Human>();
 
     // Start is called before the first frame update
     void Start()
@@ -50,27 +50,15 @@ public class ManagerUI : MonoBehaviour
         List.Add(c);
     }
 
-    // Update is called once per frame
-    void Update()
-    {   
-        
-    }
-
-    public static void DestroyWindow()
-    {
-        Destroy(WindowNow);
-    }
-
     public static void SetWindow(GameObject window)
     {
         Destroy(WindowNow);
         WindowNow = Instantiate(window, canvas);
     }
-    
+
     public static void SetWindow(GameObject window, int index)
     {
-        Destroy(WindowNow);
-        WindowNow = Instantiate(window, canvas);
+        SetWindow(window);
         var person = List[index];
         switch (person.GetType().Name)
         {

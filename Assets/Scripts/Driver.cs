@@ -55,6 +55,7 @@ public sealed class Driver : Employee
         public void InputAdd(InputField[] baseInputFields, InputField[] birthday, InputField[] employeeInputFields, InputField[] driverInputFields)
         {
             base.InputAdd(baseInputFields, birthday, employeeInputFields);
+            InputFieldChecker(driverInputFields);
             SetCarBrand(driverInputFields[0].text);
             SetCarModel(driverInputFields[1].text);
         }

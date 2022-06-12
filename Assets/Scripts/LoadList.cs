@@ -18,7 +18,7 @@ public class LoadList : MonoBehaviour
                 for (var i = 0; i < ManagerUI.List.Count; i++)
                 {
                     nameList.Add(Instantiate(NameObject, transform));
-                    nameList[i].transform.GetComponent<ButtonController>()._indexOfList = i;
+                    nameList[i].transform.GetComponent<ButtonController>().indexOfList = i;
                     nameList[i].transform.GetChild(0).transform.GetComponent<Text>().text = ManagerUI.List[i].Name;
                 }
                 break;
