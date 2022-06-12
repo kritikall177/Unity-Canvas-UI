@@ -16,38 +16,41 @@ public class ManagerUI : MonoBehaviour
     {
         canvas = GetComponent<Transform>();
         WindowNow = Instantiate(MainWindow, transform);
-        //
-        var a = gameObject.AddComponent<Student>();
-        a.SetName("Student");
-        a.SetSurname("SurStudent");
-        a.SetPatronymic("PatrStudent");
-        a.SetDate(DateTime.Now);
-        a.SetFaculty("fit");
-        a.SetGroup("20vs");
-        a.SetYear(1);
-        List.Add(a);
-        //
-        var b = gameObject.AddComponent<Employee>();
-        b.SetName("Employee");
-        b.SetSurname("SurEmployee");
-        b.SetPatronymic("PatrEmployee");
-        b.SetDate(DateTime.Now);
-        b.SetExperience(2);
-        b.SetOrganization("psu");
-        b.SetSalary(12);
-        List.Add(b);
-        //
-        var c = gameObject.AddComponent<Driver>();
-        c.SetName("Driver");
-        c.SetSurname("SurDriver");
-        c.SetPatronymic("PatrDriver");
-        c.SetDate(DateTime.Now);
-        c.SetExperience(2);
-        c.SetOrganization("psu");
-        c.SetSalary(12);
-        c.SetCarBrand("zaz");
-        c.SetCarModel("ыфа");
-        List.Add(c);
+        for (var i = 0; i < 4; i++)
+        {
+            //
+            var a = gameObject.AddComponent<Student>();
+            a.SetName("Student");
+            a.SetSurname("SurStudent");
+            a.SetPatronymic("PatrStudent");
+            a.SetDate(DateTime.Now);
+            a.SetFaculty("fit");
+            a.SetGroup("20vs");
+            a.SetYear(1);
+            List.Add(a);
+            //
+            var b = gameObject.AddComponent<Employee>();
+            b.SetName("Employee");
+            b.SetSurname("SurEmployee");
+            b.SetPatronymic("PatrEmployee");
+            b.SetDate(DateTime.Now);
+            b.SetExperience(2);
+            b.SetOrganization("psu");
+            b.SetSalary(12);
+            List.Add(b);
+            //
+            var c = gameObject.AddComponent<Driver>();
+            c.SetName("Driver");
+            c.SetSurname("SurDriver");
+            c.SetPatronymic("PatrDriver");
+            c.SetDate(DateTime.Now);
+            c.SetExperience(2);
+            c.SetOrganization("psu");
+            c.SetSalary(12);
+            c.SetCarBrand("zaz");
+            c.SetCarModel("ыфа");
+            List.Add(c);  
+        }
     }
 
     public static void SetWindow(GameObject window)

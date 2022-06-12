@@ -39,6 +39,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5475020491635310379, guid: 8a28fa75770ac2548b689bd60cbe98b5, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5475020491635310382, guid: 8a28fa75770ac2548b689bd60cbe98b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
