@@ -71,7 +71,6 @@ public class AddPerson : MonoBehaviour
         {
             transform.parent.GetChild(transform.parent.childCount - 1).GetChild(0).GetComponent<Text>().text =
                 exception.Message;
-            Debug.Log(23);
         }
     }
 

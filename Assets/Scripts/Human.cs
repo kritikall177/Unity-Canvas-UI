@@ -39,20 +39,7 @@ public abstract class Human : MonoBehaviour
             Patronymic = person.Patronymic;
             Birthday = person.Birthday;
         }
-
-        public virtual void Print()
-        {
-            Console.WriteLine($"Name: {Name}");
-            Console.WriteLine($"Surname: {Surname}");
-            Console.WriteLine($"Patronymic: {Patronymic}");
-            Console.WriteLine($"Birthday: {Birthday.ToShortDateString()}");
-        }
-
-        public void PrintFullYears()
-        {
-            Console.WriteLine($"Full years: {(int)((DateTime.Today - Birthday).TotalDays / 365.2425)}");
-        }
-
+        
         public void SetName(string name)
         {
             Name = name;

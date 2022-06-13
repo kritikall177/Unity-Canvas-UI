@@ -34,13 +34,6 @@ public sealed class Driver : Employee
         {
             Console.WriteLine("Driver has been deleted");
         }
-        
-        public override void Print()
-        {
-            base.Print();
-            Console.WriteLine($"Car Brand: {CarBrand}");
-            Console.WriteLine($"Car Model: {CarModel}");
-        }
 
         public void SetCarBrand(string brand)
         {

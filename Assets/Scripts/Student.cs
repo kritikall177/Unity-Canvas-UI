@@ -34,14 +34,6 @@ public class Student : Human
             Console.WriteLine("Student has been cloned");
         }
 
-        public override void Print()
-        {
-            base.Print();
-            Console.WriteLine($"Faculty: {Faculty}");
-            Console.WriteLine($"Year: {Year}");
-            Console.WriteLine($"Group: {Group}");
-        }
-
         public void SetFaculty(string faculty)
         {
             Faculty = faculty;

@@ -34,14 +34,6 @@ public class Employee : Human
             Console.WriteLine("Employee has been cloned");
         }
 
-        public override void Print()
-        {
-            base.Print();
-            Console.WriteLine($"Organization: {Organization}");
-            Console.WriteLine($"Salary: {Salary}");
-            Console.WriteLine($"Experience: {Experience}");
-        }
-
         public void SetOrganization(string organization)
         {
             Organization = organization;
