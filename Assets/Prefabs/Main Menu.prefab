@@ -122,19 +122,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8112347116632019153}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7182018869692902387}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: CreateWindow
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 5390321780648741178, guid: 8d4bc64ac3aba4c42a1dbd7acc9cc174, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!95 &5219035526412775020
 Animator:
   serializedVersion: 3
@@ -289,19 +277,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6205198232669985388}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9001163553529957918}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: CreateWindow
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 5665003091458376172, guid: 55fef7e1dc451a346ad803e4b470e052, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!95 &3859951346031845352
 Animator:
   serializedVersion: 3
@@ -770,19 +746,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6252056430035370617}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1748029503546565636}
-        m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
-        m_MethodName: ExitGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1748029503546565636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,6 +770,7 @@ GameObject:
   - component: {fileID: 6252056430386094904}
   - component: {fileID: 6252056430386094906}
   - component: {fileID: 6252056430386094905}
+  - component: {fileID: -6233774700692873508}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -876,6 +841,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-6233774700692873508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252056430386094919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b754cf3f563579f4c95649834d09aba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 8933017431819169381}
+  - {fileID: 373661689932239027}
+  - {fileID: 8083112143178873290}
+  - {fileID: 36575844796305730}
+  - {fileID: 8915114735637002696}
 --- !u!1 &8083112143178873290
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,19 +981,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1932648270473856544}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3756972882072673635}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: CreateWindow
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 537896862638563668, guid: e1001359a4d9f2c4c905c8a88d5594a2, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!95 &4132528600819949267
 Animator:
   serializedVersion: 3
@@ -1244,19 +1215,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5236475640881070320}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7104931044330970642}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: CreateWindow
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6073051274483310719, guid: 04d793d403232254587b78a164bfcbf2, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!95 &496303379991547175
 Animator:
   serializedVersion: 3
@@ -1411,19 +1370,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5778946111852256450}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8883718420815472288}
-        m_TargetAssemblyTypeName: NextWindowButton, Assembly-CSharp
-        m_MethodName: CreateWindow
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8805559830096106904, guid: fbebede05573cd643a13b2245549f94d, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!95 &4331626127166733902
 Animator:
   serializedVersion: 3

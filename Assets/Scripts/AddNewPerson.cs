@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EditPerson : Window
+public class AddNewPerson : Window
 {
     // Start is called before the first frame update
     void Start()
@@ -19,11 +19,11 @@ public class EditPerson : Window
 
     protected override void SelfOpen(Transform position)
     {
-        throw new System.NotImplementedException();
+        Instantiate(this, position);
     }
 
     protected override void SelfClose()
     {
-        throw new System.NotImplementedException();
+        Destroy(this.gameObject);
     }
 }

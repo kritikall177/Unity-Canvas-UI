@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EditPerson : Window
+public class PersonDetail : Window
 {
     // Start is called before the first frame update
     void Start()

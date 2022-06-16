@@ -9,22 +9,22 @@ public class ButtonController : MonoBehaviour
     public int indexOfList = -1;
     public void CreateWindow(GameObject window)
     {
-        ManagerUI.SetWindow(window);
+        //ManagerUI.SetWindow(window);
     }
 
     public void CreateWindowForEdit(GameObject window, int index)
     {
-        ManagerUI.SetWindowForEdit(window, index);
+        //ManagerUI.SetWindowForEdit(window, index);
     }
     
     public void CreateWindowForPrint(GameObject window, int index)
     {
-        ManagerUI.SetWindowForPrint(window, index);
+        //ManagerUI.SetWindowForPrint(window, index);
     }
     
     public void ChoosePerson(int numberOfChild)
     {
-        ManagerUI.ChoosePerson(numberOfChild);
+        //ManagerUI.ChoosePerson(numberOfChild);
     }
 
     public void ChoosePersonForEdit(GameObject window)
@@ -41,7 +41,7 @@ public class ButtonController : MonoBehaviour
 
     public void DeletePerson()
     {
-        ManagerUI.List.RemoveAt(indexOfList);
+        //ManagerUI.List.RemoveAt(indexOfList);
         Destroy(gameObject);
     }
 }
