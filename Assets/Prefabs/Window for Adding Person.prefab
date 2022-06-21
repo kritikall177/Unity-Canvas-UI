@@ -168,7 +168,6 @@ GameObject:
   - component: {fileID: 2761589780340580382}
   - component: {fileID: 8046134864826740063}
   - component: {fileID: 4545371269367708858}
-  - component: {fileID: 5910145475994256558}
   m_Layer: 5
   m_Name: Button Employee
   m_TagString: Untagged
@@ -277,31 +276,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2761589780340580382}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5910145475994256558}
-        m_TargetAssemblyTypeName: NextWindowButton, Assembly-CSharp
-        m_MethodName: CreateWindow
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 949279608113717063, guid: 7739eb0bda05e5743a81305356bf20db, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5910145475994256558}
-        m_TargetAssemblyTypeName: NextWindowButton, Assembly-CSharp
-        m_MethodName: ChoosePerson
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!95 &4545371269367708858
 Animator:
   serializedVersion: 3
@@ -321,19 +296,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5910145475994256558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4356592602828597016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d128b9e8135ac854aacf271e314ded8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indexOfList: -1
 --- !u!1 &6563824911178835704
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +467,6 @@ GameObject:
   - component: {fileID: 3371740184680126726}
   - component: {fileID: 9158251158677876737}
   - component: {fileID: 8998718954367432005}
-  - component: {fileID: 1674204799581596439}
   m_Layer: 5
   m_Name: Button Driver
   m_TagString: Untagged
@@ -614,31 +575,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3371740184680126726}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1674204799581596439}
-        m_TargetAssemblyTypeName: NextWindowButton, Assembly-CSharp
-        m_MethodName: CreateWindow
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 949279608113717063, guid: 7739eb0bda05e5743a81305356bf20db, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1674204799581596439}
-        m_TargetAssemblyTypeName: NextWindowButton, Assembly-CSharp
-        m_MethodName: ChoosePerson
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!95 &8998718954367432005
 Animator:
   serializedVersion: 3
@@ -658,19 +595,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1674204799581596439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8035041015892923918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d128b9e8135ac854aacf271e314ded8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indexOfList: -1
 --- !u!1 &8805559828382308937
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,7 +687,6 @@ GameObject:
   - component: {fileID: 8805559829308103472}
   - component: {fileID: 8805559829308103473}
   - component: {fileID: 8805559829308103474}
-  - component: {fileID: 3002494031476257467}
   m_Layer: 5
   m_Name: Button Student
   m_TagString: Untagged
@@ -872,31 +795,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8805559829308103472}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3002494031476257467}
-        m_TargetAssemblyTypeName: NextWindowButton, Assembly-CSharp
-        m_MethodName: CreateWindow
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 949279608113717063, guid: 7739eb0bda05e5743a81305356bf20db, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3002494031476257467}
-        m_TargetAssemblyTypeName: NextWindowButton, Assembly-CSharp
-        m_MethodName: ChoosePerson
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!95 &8805559829308103474
 Animator:
   serializedVersion: 3
@@ -916,19 +815,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3002494031476257467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8805559829308103476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d128b9e8135ac854aacf271e314ded8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indexOfList: -1
 --- !u!1 &8805559830096106904
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +826,7 @@ GameObject:
   - component: {fileID: 8805559830096106983}
   - component: {fileID: 8805559830096106981}
   - component: {fileID: 8805559830096106982}
+  - component: {fileID: -2144058672275843084}
   m_Layer: 5
   m_Name: Window for Adding Person
   m_TagString: Untagged
@@ -1009,6 +896,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-2144058672275843084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805559830096106904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d35aa643c2625e4294dec868b8a217f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3178390291655927997
 PrefabInstance:
   m_ObjectHideFlags: 0
