@@ -6,34 +6,40 @@ using UnityEngine.UI;
 
 public class StartWindow : Window
 {
-    public List<GameObject> buttons;
-    private AddNewPerson addNewPerson;
-    private EditPerson editPerson;
-    private DeletePerson deletePerson;
-    private PersonDetail personDetail;
-    private ShowAllPersons showAllPersons;
+    public List<Button> buttons;
+    private AddNewPerson _addNewPerson;
+    private ListForEdit _listForEdit;
+    private ListForDelete _listForDelete;
+    private ListForDetailInfo _listForDetailInfo;
+    private ShowAllPersons _showAllPersons;
     
     void Start()
     {
-        addNewPerson = (AddNewPerson)GetComponentInParent<UIManager>().GetWindow<AddNewPerson>();
-        editPerson = (EditPerson)GetComponentInParent<UIManager>().GetWindow<EditPerson>();
-        deletePerson = (DeletePerson)GetComponentInParent<UIManager>().GetWindow<DeletePerson>();
-        personDetail = (PersonDetail)GetComponentInParent<UIManager>().GetWindow<PersonDetail>();
-        showAllPersons = (ShowAllPersons)GetComponentInParent<UIManager>().GetWindow<ShowAllPersons>();
+        _addNewPerson = (AddNewPerson)GetComponentInParent<UIManager>().GetWindow<AddNewPerson>();
+        _listForEdit = (ListForEdit)GetComponentInParent<UIManager>().GetWindow<ListForEdit>();
+        _listForDelete = (ListForDelete)GetComponentInParent<UIManager>().GetWindow<ListForDelete>();
+        _listForDetailInfo = (ListForDetailInfo)GetComponentInParent<UIManager>().GetWindow<ListForDetailInfo>();
+        _showAllPersons = (ShowAllPersons)GetComponentInParent<UIManager>().GetWindow<ShowAllPersons>();
         
-        buttons[0].GetComponent<Button>().onClick.AddListener(() =>
+        buttons[0].onClick.AddListener(() =>
         {
-            ChangeCurrentWindow(addNewPerson);
+            ChangeCurrentWindow(_addNewPerson);
         });
-    }
-    
-    protected override void SelfOpen(Transform position)
-    {
-        Instantiate(this, position);
-    }
-
-    protected override void SelfClose()
-    {
-        Destroy(gameObject);
+        buttons[1].onClick.AddListener(() =>
+        {
+            ChangeCurrentWindow(_listForEdit);
+        });
+        buttons[2].onClick.AddListener(() =>
+        {
+            ChangeCurrentWindow(_listForDelete);
+        });
+        buttons[3].onClick.AddListener(() =>
+        {
+            ChangeCurrentWindow(_listForDetailInfo);
+        });
+        buttons[4].onClick.AddListener(() =>
+        {
+            ChangeCurrentWindow(_showAllPersons);
+        });
     }
 }

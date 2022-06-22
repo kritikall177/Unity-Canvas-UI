@@ -12,17 +12,13 @@ public abstract class Window : MonoBehaviour
 
     public void Open(Transform position)
     {
-        SelfOpen(position);
+        Instantiate(this, position);
     }
 
-    protected abstract void SelfOpen(Transform position);
-    
     public void Close()
     {
-        SelfClose();
+        Destroy(gameObject);
     }
-
-    protected abstract void SelfClose();
 
     protected void ChangeCurrentWindow(Window sender)
     {

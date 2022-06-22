@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5665003091458376173}
     m_Modifications:
+    - target: {fileID: 6208294702203591706, guid: fabf06c4a74186143b292aacd031887e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6208294702203591908, guid: fabf06c4a74186143b292aacd031887e, type: 3}
       propertyPath: m_Name
       value: Exit button
@@ -264,10 +268,36 @@ PrefabInstance:
       propertyPath: NameObject
       value: 
       objectReference: {fileID: 5169454835562771, guid: 2a27bf1d18274374f952fe4c81a956f0, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8609288962444988961, guid: 5ceb38e09f014af4a85ea5566da753b0, type: 3}
+    - {fileID: 970410419254784666, guid: 5ceb38e09f014af4a85ea5566da753b0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5ceb38e09f014af4a85ea5566da753b0, type: 3}
+--- !u!1 &5665003091458376172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 103793376980802747, guid: 5ceb38e09f014af4a85ea5566da753b0, type: 3}
+  m_PrefabInstance: {fileID: 5759714467871415639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5665003091458376173 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 103793376980802746, guid: 5ceb38e09f014af4a85ea5566da753b0, type: 3}
   m_PrefabInstance: {fileID: 5759714467871415639}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &5665003093016253391 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 103793376421105304, guid: 5ceb38e09f014af4a85ea5566da753b0, type: 3}
+  m_PrefabInstance: {fileID: 5759714467871415639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5785933678289113648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5665003091458376172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185a44f810d185049977633fb6474aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 5475020491635310383, guid: 8a28fa75770ac2548b689bd60cbe98b5, type: 3}
+  contentPosition: {fileID: 5665003093016253391}

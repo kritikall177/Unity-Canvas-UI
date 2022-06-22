@@ -68,17 +68,17 @@ public class Employee : Human
             SetExperience(employeeInputFields[2].text);
         }
         
-        public void Edit(InputField[] baseInputFields, InputField[] birthday, InputField[] employeeInputFields)
+        public void Print(InputField[] baseInputFields, InputField[] birthday, InputField[] employeeInputFields)
         {
-            base.Edit(baseInputFields, birthday);
+            base.Print(baseInputFields, birthday);
             employeeInputFields[0].text = Organization;
             employeeInputFields[1].text = Convert.ToString(Salary);
             employeeInputFields[2].text = Convert.ToString(Experience);
         }
         
-        public void Print(Text[] baseInputFields, Text[] birthday, Text[] employeeInputFields)
+        public void PrintBase(Text[] baseInputFields, Text[] birthday, Text[] employeeInputFields)
         {
-            base.Print(baseInputFields, birthday);
+            base.PrintBase(baseInputFields, birthday);
             employeeInputFields[0].text = Organization;
             employeeInputFields[1].text = Convert.ToString(Salary);
             employeeInputFields[2].text = Convert.ToString(Experience);

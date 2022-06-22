@@ -80,7 +80,7 @@ public abstract class Human : MonoBehaviour
             SetDate(birthday[0].text, birthday[1].text, birthday[2].text);
         }
 
-        public void Edit(InputField[] baseInputFields, InputField[] birthday)
+        public void Print(InputField[] baseInputFields, InputField[] birthday)
         {
             baseInputFields[0].text = Name;
             baseInputFields[1].text = Surname;
@@ -90,7 +90,7 @@ public abstract class Human : MonoBehaviour
             birthday[2].text = Convert.ToString(Birthday.Day);
         }
 
-        public void Print(Text[] baseInputFields, Text[] birthday)
+        public void PrintBase(Text[] baseInputFields, Text[] birthday)
         {
             baseInputFields[0].text = Name;
             baseInputFields[1].text = Surname;

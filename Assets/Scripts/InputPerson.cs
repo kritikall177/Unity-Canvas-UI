@@ -1,12 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class EditPerson : PersonInputOutput
+public class InputPerson : PersonInputOutput
 {
     void Start()
     {
@@ -15,7 +14,6 @@ public class EditPerson : PersonInputOutput
             try
             {
                 AddingPerson();
-                DataBase.List.RemoveAt(IndexInList);
                 ChangeCurrentWindow(StartWindow);
             }
             catch (Exception exception)
@@ -25,7 +23,5 @@ public class EditPerson : PersonInputOutput
         });
         InitialСonfiguration();
         InputFieldsSetUp();
-        addButton.transform.GetComponent<ButtonController>().NameOnButton.text = "Edit";
-        LoadPersonInfo();
     }
 }

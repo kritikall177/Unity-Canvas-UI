@@ -63,17 +63,17 @@ public class Student : Human
             SetGroup(studentInputFields[2].text);
         }
         
-        public void Edit(InputField[] baseInputFields, InputField[] birthday, InputField[] studentInputFields)
+        public void Print(InputField[] baseInputFields, InputField[] birthday, InputField[] studentInputFields)
         {
-            base.Edit(baseInputFields, birthday);
+            base.Print(baseInputFields, birthday);
             studentInputFields[0].text = Faculty;
             studentInputFields[1].text = Convert.ToString(Year);
             studentInputFields[2].text = Group;
         }
         
-        public void Print(Text[] baseInputFields, Text[] birthday, Text[] studentInputFields)
+        public void PrintBase(Text[] baseInputFields, Text[] birthday, Text[] studentInputFields)
         {
-            base.Print(baseInputFields, birthday);
+            base.PrintBase(baseInputFields, birthday);
             studentInputFields[0].text = Faculty;
             studentInputFields[1].text = Convert.ToString(Year);
             studentInputFields[2].text = Group;

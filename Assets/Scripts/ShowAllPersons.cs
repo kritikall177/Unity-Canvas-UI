@@ -16,14 +16,4 @@ public class ShowAllPersons : Window
     {
         
     }
-
-    protected override void SelfOpen(Transform position)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    protected override void SelfClose()
-    {
-        throw new System.NotImplementedException();
-    }
 }
