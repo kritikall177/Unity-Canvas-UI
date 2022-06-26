@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static System.String;
 
-public abstract class Human
+public abstract class Human : MonoBehaviour
     {
         public string Name { get; protected set; }
 
@@ -91,7 +91,7 @@ public abstract class Human
             birthday[2].text = Convert.ToString(Birthday.Day);
         }
 
-        public void PrintBase(TextMeshProUGUI[] baseFields, TextMeshProUGUI[] birthday)
+        public void PrintBase(Text[] baseFields, Text[] birthday)
         {
             baseFields[0].text = Name;
             baseFields[1].text = Surname;

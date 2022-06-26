@@ -1,9 +1,10 @@
-using TMPro;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class PersonMainInfo : MonoBehaviour
 {
-    public TextMeshProUGUI[] baseInfo;
-    public TextMeshProUGUI[] birthday;
+    public Text[] baseInfo;
+    public Text[] birthday;
 }

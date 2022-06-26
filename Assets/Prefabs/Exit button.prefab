@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6208294702203591704}
   - component: {fileID: 6208294702203591707}
   - component: {fileID: 6208294702203591706}
-  - component: {fileID: 5356338409654994450}
+  - component: {fileID: -3671553421001161886}
   m_Layer: 5
   m_Name: Exit button
   m_TagString: Untagged
@@ -120,20 +120,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6208294702203591707}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5356338409654994450}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: CreateWindow
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6252056430386094919, guid: 6d07fc693b6ce974993c2354cad8484d, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &5356338409654994450
+      m_Calls: []
+--- !u!114 &-3671553421001161886
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,7 +130,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6208294702203591908}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d128b9e8135ac854aacf271e314ded8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 96d49fc70a093424fad5ccbf1c77312c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexOfList: -1

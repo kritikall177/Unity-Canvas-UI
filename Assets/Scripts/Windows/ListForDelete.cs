@@ -1,16 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ListForDelete : ListLoad
 {
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        LoadingPersonsList();
+        LoadingPersonslist();
         for (var i = 0; i < PersonsForEdit.Count; i++)
         {
             var j = i;
             PersonsForEdit[i].GetComponent<Button>().onClick.AddListener(() =>
             {
-                DataBase.ListOfHumans.RemoveAt(j);
+                DataBase.List.RemoveAt(j);
                 Destroy(PersonsForEdit[j]);
             });
         }

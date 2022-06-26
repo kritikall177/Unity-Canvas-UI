@@ -1,24 +1,35 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class AddNewPerson : Window
 {
-    [SerializeField] private Button _addStudentButton;
-    [SerializeField] private Button _addEmployeeButton;
-    [SerializeField] private Button _addDriverButton;
-
+    public List<Button> buttons;
     private InputPerson _inputPerson;
-
-    private void Start()
+    
+    // Start is called before the first frame update
+    void Start()
     {
-        _inputPerson = DataBase.GetWindow<InputPerson>();
-
-        _addStudentButton.onClick.AddListener(() => { ChangeCurrentWindow(_inputPerson, Person.Student); });
-        _addEmployeeButton.onClick.AddListener(() => { ChangeCurrentWindow(_inputPerson, Person.Employee); });
-        _addDriverButton.onClick.AddListener(() => { ChangeCurrentWindow(_inputPerson, Person.Driver); });
+        _inputPerson = (InputPerson)GetComponentInParent<UIManager>().GetWindow<InputPerson>();
+        
+        buttons[0].onClick.AddListener(() =>
+        {
+            ChangeCurrentWindow(_inputPerson, Person.Student);
+        });
+        buttons[1].onClick.AddListener(() =>
+        {
+            ChangeCurrentWindow(_inputPerson, Person.Employee);
+        });
+        buttons[2].onClick.AddListener(() =>
+        {
+            ChangeCurrentWindow(_inputPerson, Person.Driver);
+        });
     }
 
-    private void ChangeCurrentWindow(InputPerson sender, Person type)
+    protected void ChangeCurrentWindow(InputPerson sender, Person type)
     {
         sender.Open(transform.parent, type);
         Close();
