@@ -1,13 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 public class InputPerson : PersonInputOutput
 {
-    void Start()
+    private void Start()
     {
         addButton.onClick.AddListener(() =>
         {
@@ -21,7 +16,7 @@ public class InputPerson : PersonInputOutput
                 outputField.text = exception.Message;
             }
         });
-        InitialСonfiguration();
+        InitialConfiguration();
         InputFieldsSetUp();
     }
 }

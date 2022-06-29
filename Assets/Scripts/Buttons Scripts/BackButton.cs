@@ -1,19 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BackButton : MonoBehaviour
 {
+    [SerializeField] private Transform _currentPosition;
     private StartWindow _startWindow;
-        
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-        _startWindow = (StartWindow)GetComponentInParent<UIManager>().GetWindow<StartWindow>();
+        _startWindow = DataBase.GetWindow<StartWindow>();
+
         GetComponent<Button>().onClick.AddListener(() =>
         {
-            transform.parent.GetComponent<Window>().ChangeCurrentWindow(_startWindow);
+            _currentPosition.GetComponent<Window>().ChangeCurrentWindow(_startWindow);
         });
     }
 }

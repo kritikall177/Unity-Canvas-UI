@@ -1,29 +1,17 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public List<Window> Windows;
+    [SerializeField] private List<Window> _windows;
 
-    void Start()
+    private void Start()
     {
-        foreach(var window in Windows)
+        foreach (var window in _windows)
         {
-            if (window is StartWindow)
-            {
-                window.Open(transform);
-            }
+            DataBase.ListOfWindows.Add(window);
         }
-    }
-    
-    public Window GetWindow<T> () where T : Window
-    {
-        foreach(var window in Windows)
-        {
-            if (window is T)
-                return window;
-        }
-        return null;
+
+        DataBase.GetWindow<StartWindow>().Open(transform);
     }
 }

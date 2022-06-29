@@ -1,19 +1,26 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ListLoad : Window
 {
-    public GameObject button;
-    public Transform contentPosition;
-    protected List<GameObject> PersonsForEdit = new List<GameObject>();
+    [SerializeField] protected GameObject PlateOfHuman;
+    [SerializeField] protected Transform ContentPosition;
     
-    protected void LoadingPersonslist()
+    protected readonly List<GameObject> PersonsForEdit = new List<GameObject>();
+
+    protected void LoadingPersonsList()
     {
-        for (var i = 0; i < DataBase.List.Count; i++)
+        for (var i = 0; i < DataBase.ListOfHumans.Count; i++)
         {
-            PersonsForEdit.Add(Instantiate(button, contentPosition));
-            PersonsForEdit[i].transform.GetComponent<ButtonController>().NameOnButton.text = DataBase.List[i].Name;
+            PersonsForEdit.Add(Instantiate(PlateOfHuman, ContentPosition));
+            PersonsForEdit[i].transform.GetComponent<ButtonController>().NameOnButton.text =
+                DataBase.ListOfHumans[i].Name;
         }
+    }
+
+    protected void ChangeCurrentWindow(PersonInputOutput sender, Person type, int indexInList)
+    {
+        sender.Open(transform.parent, type, indexInList);
+        Close();
     }
 }

@@ -1,25 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class PersonDetail : PersonInputOutput
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        addButton.onClick.AddListener(() =>
-        {
-            ChangeCurrentWindow(StartWindow);
-        });
-        InitialСonfiguration();
+        addButton.onClick.AddListener(() => { ChangeCurrentWindow(StartWindow); });
+        InitialConfiguration();
         addButton.transform.GetComponent<ButtonController>().NameOnButton.text = "Back";
         InputFieldsSetUp();
         LoadPersonInfo();
         PlaceHolderDisable();
-
     }
 
     private void PlaceHolderDisable()

@@ -100,6 +100,11 @@ MonoBehaviour:
   - {fileID: 5075790969689293660}
   - {fileID: 953847784327406069}
   - {fileID: 6809640709677547642}
+  _addNewPerson: {fileID: 4235201847879203}
+  _listForEdit: {fileID: 6052342188078029847}
+  _listForDelete: {fileID: 5075790969689293660}
+  _listForDetailInfo: {fileID: 953847784327406069}
+  _listOfAllPersons: {fileID: 6809640709677547642}
 --- !u!1001 &976149582417198196
 PrefabInstance:
   m_ObjectHideFlags: 0
