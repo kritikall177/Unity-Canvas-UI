@@ -1,27 +1,40 @@
-using TMPro;
-
 public class PersonDetail : PersonInputOutput
 {
-    private void Start()
+    protected override void Start()
     {
-        addButton.onClick.AddListener(() => { ChangeCurrentWindow(StartWindow); });
-        InitialConfiguration();
-        addButton.transform.GetComponent<ButtonController>().NameOnButton.text = "Back";
-        InputFieldsSetUp();
+        base.Start();
+        CompletionButton.button.onClick.AddListener(() =>
+        {
+            UIManager.Instance.ChangeCurrentWindowOn<ListForEdit>(gameObject);
+        });
         LoadPersonInfo();
-        PlaceHolderDisable();
+        FieldsReadOnly();
+        CompletionButton.nameOnButton.text = "Back";
     }
 
-    private void PlaceHolderDisable()
+    private void FieldsReadOnly()
     {
-        foreach (var inputField in inputFields)
-        {
-            inputField.GetComponent<TMP_InputField>().enabled = false;
-        }
+        Name.inputField.enabled = false;
+        Surname.inputField.enabled = false;
+        Patronymic.inputField.enabled = false;
+        _birthday.InputShutdown();
 
-        foreach (var inputField in birthday)
+        switch (WindowParameters.Type.Name)
         {
-            inputField.enabled = false;
+            case nameof(Student):
+                Faculty.inputField.enabled = false;
+                Year.inputField.enabled = false;
+                Group.inputField.enabled = false;
+                break;
+            case nameof(Employee):
+                Organization.inputField.enabled = false;
+                Salary.inputField.enabled = false;
+                Experience.inputField.enabled = false;
+                break;
+            case nameof(Driver):
+                CarBrand.inputField.enabled = false;
+                CarModel.inputField.enabled = false;
+                goto case nameof(Employee);
         }
     }
 }

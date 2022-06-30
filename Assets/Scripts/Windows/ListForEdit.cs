@@ -1,19 +1,35 @@
-using UnityEngine.UI;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class ListForEdit : ListLoad
+public class ListForEdit : Window
 {
-    private EditPerson _editPerson;
+    [SerializeField] protected PersonForList PlateOfHuman;
+    [SerializeField] protected Transform ContentPosition;
+
+    protected readonly List<PersonForList> ListOfPersons = new List<PersonForList>();
 
     private void Start()
     {
-        _editPerson = DataBase.GetWindow<EditPerson>();
-        LoadingPersonsList();
-        for (var i = 0; i < PersonsForEdit.Count; i++)
+        for (var i = 0; i < DataBase.ListOfHumans.Count; i++)
         {
+            ListOfPersons.Add(Instantiate(PlateOfHuman, ContentPosition));
+            ListOfPersons[i].Name.text = DataBase.ListOfHumans[i].Name;
             var j = i;
-            PersonsForEdit[i].GetComponent<Button>().onClick.AddListener(() =>
+            var windowParameters = new WindowParameters();
+            windowParameters.SetIndex(j);
+            windowParameters.SetTypeFrom(DataBase.ListOfHumans[j].GetType());
+            ListOfPersons[i].EditButton.button.onClick.AddListener(() =>
             {
-                ChangeCurrentWindow(_editPerson, DataBase.ListOfHumans[j].TypeOfPerson(), j);
+                UIManager.Instance.ChangeCurrentWindowOn<EditPerson>(gameObject, windowParameters);
+            });
+            ListOfPersons[i].DeleteButton.button.onClick.AddListener(() =>
+            {
+                DataBase.ListOfHumans.RemoveAt(j);
+                Destroy(ListOfPersons[j].GameObject);
+            });
+            ListOfPersons[i].DetailButton.button.onClick.AddListener(() =>
+            {
+                UIManager.Instance.ChangeCurrentWindowOn<PersonDetail>(gameObject, windowParameters);
             });
         }
     }

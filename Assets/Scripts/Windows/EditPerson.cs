@@ -2,24 +2,23 @@ using System;
 
 public class EditPerson : PersonInputOutput
 {
-    private void Start()
+    protected override void Start()
     {
-        addButton.onClick.AddListener(() =>
+        base.Start();
+        CompletionButton.button.onClick.AddListener(() =>
         {
             try
             {
-                AddingPerson();
-                DataBase.ListOfHumans.RemoveAt(IndexInList);
-                ChangeCurrentWindow(StartWindow);
+                AddAPerson();
+                DataBase.ListOfHumans.RemoveAt(WindowParameters.IndexInList);
+                UIManager.Instance.ChangeCurrentWindowOn<ListForEdit>(gameObject);
             }
             catch (Exception exception)
             {
-                outputField.text = exception.Message;
+                OutputField.text = exception.Message;
             }
         });
-        InitialConfiguration();
-        InputFieldsSetUp();
-        addButton.transform.GetComponent<ButtonController>().NameOnButton.text = "Edit";
         LoadPersonInfo();
+        CompletionButton.nameOnButton.text = "Edit";
     }
 }

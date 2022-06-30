@@ -548,14 +548,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f05e572fb990cd43a06762e17506859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseInfo:
-  - {fileID: 5765727517111898440}
-  - {fileID: 8998494796166244705}
-  - {fileID: 5841965715951470797}
-  birthday:
-  - {fileID: 3383759040274028196}
-  - {fileID: 4339949600712981742}
-  - {fileID: 5244053010915978523}
+  _name: {fileID: 5765727517111898440}
+  _surname: {fileID: 8998494796166244705}
+  _patronymic: {fileID: 5841965715951470797}
+  _year: {fileID: 3383759040274028196}
+  _month: {fileID: 4339949600712981742}
+  _day: {fileID: 5244053010915978523}
 --- !u!1 &3786891868877594226
 GameObject:
   m_ObjectHideFlags: 0

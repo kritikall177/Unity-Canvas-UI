@@ -288,4 +288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d128b9e8135ac854aacf271e314ded8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameOnButton: {fileID: 1623066835287640088}
+  buttonGameObject: {fileID: 5475020491635310383}
+  button: {fileID: 5475020491635310376}
+  nameOnButton: {fileID: 1623066835287640088}

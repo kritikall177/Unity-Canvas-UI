@@ -1,173 +1,104 @@
-using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PersonInputOutput : Window
 {
-    public List<GameObject> inputFields;
-    public List<TextMeshProUGUI> inputFieldsNames;
-    public TMP_InputField[] birthday;
-    public Button addButton;
-    public TextMeshProUGUI outputField;
-    protected Person Type;
-    protected StartWindow StartWindow;
-    protected int IndexInList = -1;
+    [SerializeField] protected InputFieldPrefab Name;
+    [SerializeField] protected InputFieldPrefab Surname;
+    [SerializeField] protected InputFieldPrefab Patronymic;
 
-    protected void InitialConfiguration()
+    [SerializeField] protected InputFieldPrefab Faculty;
+    [SerializeField] protected InputFieldPrefab Year;
+    [SerializeField] protected InputFieldPrefab Group;
+
+    [SerializeField] protected InputFieldPrefab Organization;
+    [SerializeField] protected InputFieldPrefab Salary;
+    [SerializeField] protected InputFieldPrefab Experience;
+
+    [SerializeField] protected InputFieldPrefab CarBrand;
+    [SerializeField] protected InputFieldPrefab CarModel;
+
+    [SerializeField] protected InputFieldBirthday _birthday;
+    [SerializeField] protected TextMeshProUGUI OutputField;
+    [SerializeField] protected ButtonController CompletionButton;
+
+    protected virtual void Start()
     {
-        StartWindow = DataBase.GetWindow<StartWindow>();
-        for (var i = 0; i < 6; i++)
-        {
-            inputFields[i].SetActive(true);
-        }
+        Name.SetParameters("Name", TMP_InputField.ContentType.Name);
+        Surname.SetParameters("Surname", TMP_InputField.ContentType.Name);
+        Patronymic.SetParameters("Patronymic", TMP_InputField.ContentType.Name);
+        _birthday.SetActive(true);
 
-        inputFieldsNames[0].text = "Name";
-        inputFieldsNames[1].text = "Surname";
-        inputFieldsNames[2].text = "Patronymic";
-
-        switch (Type)
+        switch (WindowParameters.Type.Name)
         {
-            case Person.Student:
-                inputFieldsNames[3].text = "Faculty";
-                inputFieldsNames[4].text = "Year";
-                inputFieldsNames[5].text = "Group";
+            case nameof(Student):
+                Faculty.SetParameters("Faculty", TMP_InputField.ContentType.Name);
+                Year.SetParameters("Year", TMP_InputField.ContentType.IntegerNumber, 1);
+                Group.SetParameters("Group", TMP_InputField.ContentType.Standard);
                 break;
-
-            case Person.Employee:
-            case Person.Driver:
-                inputFieldsNames[3].text = "Organization";
-                inputFieldsNames[4].text = "Salary";
-                inputFieldsNames[5].text = "Experience";
-                if (Type == Person.Driver)
-                {
-                    for (var i = 6; i < 8; i++)
-                    {
-                        inputFields[i].SetActive(true);
-                        inputFieldsNames[6].text = "Car Brand";
-                        inputFieldsNames[7].text = "Car Model";
-                    }
-                }
-
+            case nameof(Driver):
+                CarBrand.SetParameters("Car Brand", TMP_InputField.ContentType.Standard);
+                CarModel.SetParameters("Car Model", TMP_InputField.ContentType.Standard);
+                goto case nameof(Employee);
+            case nameof(Employee):
+                Organization.SetParameters("Organization", TMP_InputField.ContentType.Standard);
+                Salary.SetParameters("Salary", TMP_InputField.ContentType.IntegerNumber);
+                Experience.SetParameters("Experience", TMP_InputField.ContentType.IntegerNumber, 100);
                 break;
         }
     }
 
-    protected void InputFieldsSetUp()
+    protected void AddAPerson()
     {
-        for (var i = 0; i < 4; i++)
+        switch (WindowParameters.Type.Name)
         {
-            inputFields[i].GetComponent<TMP_InputField>().contentType = TMP_InputField.ContentType.Name;
-        }
-
-        switch (Type)
-        {
-            case Person.Student:
-                inputFields[4].GetComponent<TMP_InputField>().contentType = TMP_InputField.ContentType.IntegerNumber;
-                inputFields[4].GetComponent<TMP_InputField>().characterLimit = 1;
-                inputFields[5].GetComponent<TMP_InputField>().contentType = TMP_InputField.ContentType.Standard;
+            case nameof(Student):
+                DataBase.ListOfHumans.Add(new Student(Name.inputField.text, Surname.inputField.text,
+                    Patronymic.inputField.text, _birthday.GetDateTime(), Faculty.inputField.text,
+                    Convert.ToInt32(Year.inputField.text), Group.inputField.text));
                 break;
-            case Person.Employee:
-            case Person.Driver:
-                inputFields[4].GetComponent<TMP_InputField>().contentType = TMP_InputField.ContentType.IntegerNumber;
-                inputFields[5].GetComponent<TMP_InputField>().contentType = TMP_InputField.ContentType.IntegerNumber;
-                inputFields[5].GetComponent<TMP_InputField>().characterLimit = 3;
+            case nameof(Employee):
+                DataBase.ListOfHumans.Add(new Employee(Name.inputField.text, Surname.inputField.text,
+                    Patronymic.inputField.text, _birthday.GetDateTime(), Organization.inputField.text,
+                    Convert.ToInt32(Salary.inputField.text), Convert.ToInt32(Experience.inputField.text)));
                 break;
-        }
-
-        foreach (var data in birthday)
-        {
-            data.contentType = TMP_InputField.ContentType.IntegerNumber;
-        }
-
-        birthday[0].characterLimit = 4;
-        birthday[1].characterLimit = 2;
-        birthday[2].characterLimit = 2;
-    }
-
-    public void Open(Transform position, Person type)
-    {
-        Instantiate(this, position).Type = type;
-    }
-
-    public void Open(Transform position, Person type, int indexInList)
-    {
-        var window = Instantiate(this, position);
-        window.Type = type;
-        window.IndexInList = indexInList;
-    }
-
-    protected void AddingPerson()
-    {
-        switch (Type)
-        {
-            case Person.Student:
-                var student = new Student();
-                InputFieldsDivide(out var baseInputFieldsStudent, out var studentInputFields);
-                student.InputAdd(baseInputFieldsStudent, birthday, studentInputFields);
-                DataBase.ListOfHumans.Add(student);
-                break;
-            case Person.Employee:
-                var employee = new Employee();
-                InputFieldsDivide(out var baseInputFieldsEmployee, out var employeeInputFields);
-                employee.InputAdd(baseInputFieldsEmployee, birthday, employeeInputFields);
-                DataBase.ListOfHumans.Add(employee);
-                break;
-            case Person.Driver:
-                var driver = new Driver();
-                InputFieldsDivide(out var baseInputFieldsDriver, out var driverInputFields,
-                    out var driverCarInputFields);
-                driver.InputAdd(baseInputFieldsDriver, birthday, driverInputFields,
-                    driverCarInputFields);
-                DataBase.ListOfHumans.Add(driver);
+            case nameof(Driver):
+                DataBase.ListOfHumans.Add(new Driver(Name.inputField.text, Surname.inputField.text,
+                    Patronymic.inputField.text, _birthday.GetDateTime(), Organization.inputField.text,
+                    Convert.ToInt32(Salary.inputField.text), Convert.ToInt32(Experience.inputField.text),
+                    CarBrand.inputField.text, CarModel.inputField.text));
                 break;
         }
     }
 
     protected void LoadPersonInfo()
     {
-        switch (DataBase.ListOfHumans[IndexInList].TypeOfPerson())
+        var human = DataBase.ListOfHumans[WindowParameters.IndexInList];
+        Name.inputField.text = human.Name;
+        Surname.inputField.text = human.Surname;
+        Patronymic.inputField.text = human.Patronymic;
+        _birthday.SetDateTime(human.Birthday);
+
+        switch (human.GetType().Name)
         {
-            case Person.Student:
-                var student = (Student) DataBase.ListOfHumans[IndexInList];
-                InputFieldsDivide(out var baseInputFieldsStudent, out var studentInputFields);
-                student.Print(baseInputFieldsStudent, birthday, studentInputFields);
+            case nameof(Student):
+                var student = (Student)human;
+                Faculty.inputField.text = student.Faculty;
+                Year.inputField.text = Convert.ToString(student.Year);
+                Group.inputField.text = student.Group;
                 break;
-            case Person.Employee:
-                var employee = (Employee) DataBase.ListOfHumans[IndexInList];
-                InputFieldsDivide(out var baseInputFieldsEmployee, out var employeeInputFields);
-                employee.Print(baseInputFieldsEmployee, birthday, employeeInputFields);
-                break;
-            case Person.Driver:
-                var driver = (Driver) DataBase.ListOfHumans[IndexInList];
-                InputFieldsDivide(out var baseInputFieldsDriver, out var driverInputFields,
-                    out var driverCarInputFields);
-                driver.Print(baseInputFieldsDriver, birthday, driverInputFields,
-                    driverCarInputFields);
+            case nameof(Driver):
+                var driver = (Driver)human;
+                CarBrand.inputField.text = driver.CarBrand;
+                CarModel.inputField.text = driver.CarModel;
+                goto case nameof(Employee);
+            case nameof(Employee):
+                var employee = (Employee)human;
+                Organization.inputField.text = employee.Organization;
+                Salary.inputField.text = Convert.ToString(employee.Salary);
+                Experience.inputField.text = Convert.ToString(employee.Experience);
                 break;
         }
-    }
-
-    private void InputFieldsDivide(out TMP_InputField[] baseInputFields, out TMP_InputField[] firstPartInputFields)
-    {
-        var fields = new List<TMP_InputField>();
-        foreach (var field in inputFields)
-        {
-            fields.Add(field.GetComponent<TMP_InputField>());
-        }
-
-        baseInputFields = fields.GetRange(0, 3).ToArray();
-        firstPartInputFields = fields.GetRange(3, 3).ToArray();
-    }
-
-    private void InputFieldsDivide(out TMP_InputField[] baseInputFields, out TMP_InputField[] firstPartInputFields,
-        out TMP_InputField[] secondPartInputFields)
-    {
-        InputFieldsDivide(out baseInputFields, out firstPartInputFields);
-        secondPartInputFields = new[]
-        {
-            inputFields[inputFields.Count - 2].GetComponent<TMP_InputField>(),
-            inputFields[inputFields.Count - 1].GetComponent<TMP_InputField>()
-        };
     }
 }

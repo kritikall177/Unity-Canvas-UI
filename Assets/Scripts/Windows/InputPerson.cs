@@ -1,22 +1,23 @@
 using System;
+using UnityEngine;
 
 public class InputPerson : PersonInputOutput
 {
-    private void Start()
+    protected override void Start()
     {
-        addButton.onClick.AddListener(() =>
+        base.Start();
+        CompletionButton.button.onClick.AddListener(() =>
         {
             try
             {
-                AddingPerson();
-                ChangeCurrentWindow(StartWindow);
+                AddAPerson();
+                UIManager.Instance.ChangeCurrentWindowOn<MainMenu>(gameObject);
             }
             catch (Exception exception)
             {
-                outputField.text = exception.Message;
+                Debug.Log(exception);
+                OutputField.text = exception.Message;
             }
         });
-        InitialConfiguration();
-        InputFieldsSetUp();
     }
 }

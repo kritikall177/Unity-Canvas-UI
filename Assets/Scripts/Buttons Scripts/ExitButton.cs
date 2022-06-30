@@ -3,8 +3,10 @@ using UnityEngine.UI;
 
 public class ExitButton : MonoBehaviour
 {
+  [SerializeField] private Button _button;
+  
   private void Start()
   {
-    GetComponent<Button>().onClick.AddListener(Application.Quit);
+    _button.onClick.AddListener(Application.Quit);
   }
 }

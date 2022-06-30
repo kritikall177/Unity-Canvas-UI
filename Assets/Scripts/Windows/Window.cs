@@ -2,19 +2,13 @@ using UnityEngine;
 
 public abstract class Window : MonoBehaviour
 {
-    public void Open(Transform position)
-    {
-        Instantiate(this, position);
-    }
+    protected WindowParameters WindowParameters;
 
-    public void Close()
+    public void OnCreate(WindowParameters windowParameters)
     {
-        Destroy(gameObject);
-    }
-
-    public void ChangeCurrentWindow(Window sender)
-    {
-        sender.Open(transform.parent);
-        Close();
+        if (windowParameters != null)
+        {
+            WindowParameters = windowParameters;
+        }
     }
 }
